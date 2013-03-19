@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+}
+.js-scrumboard {
+	font-family: Arial,Verdana,sans-serif;
+}
+
+.js-scrumboard .toolbar {
+	background: #D8D8D8;
+	padding: 5px;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+
+.js-scrumboard .toolbar .toolbar-item {
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.js-scrumboard .page {
+	border: 1px solid gray;
+	float: left;
+	margin: 20px;
+	width: 950px;
+	position: relative;
+}
+
+.js-scrumboard .page .close {
+	display: none;
+	float: right;
+	position: absolute;
+	cursor: pointer;
+	right: 5;
+	top: 5;
+}
+.js-scrumboard .page:hover .close {
+	display: inline;
+}
+.js-scrumboard .task {
+	border: 1px solid gray;
+	border-radius: 5px;
+	float: left;
+	margin: 20px;
+	padding: 15px;
+	width: 403px;
+	height: 230px;
+	overflow: hidden;
+	font-size: 28px;
+	line-height: 28px;
+	text-align: center;
+}
+
+/* And here is the print niceness.
+ * Hides elements + borders that shouldn't be there */
+@media print {
+	.js-scrumboard .toolbar {
+		display: none;
+	}
+	.js-scrumboard .page {
+		border: 0px solid gray;
+		page-break-after: always;
+	}
+	.js-scrumboard .page:last-child {
+		page-break-after: avoid;
+	}
+	.js-scrumboard .page .task:nth-child(odd) {
+		margin-right: 0px;
+	}
+}
