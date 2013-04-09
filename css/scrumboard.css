@@ -59,6 +59,7 @@ body {
 	}
 	.js-scrumboard .page {
 		border: 0px solid gray;
+		page-break-inside:avoid;
 		page-break-after: always;
 	}
 	.js-scrumboard .page:last-child {
